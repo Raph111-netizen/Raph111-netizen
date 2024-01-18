@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout title="About | Raphaël Pons" description="About me">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work .jpg"
+					alt="Raphaël Pons Montauban"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">
+					About me, background and way of thinking
+				</h2>
+				<div class="content">
+					<p>
+						Born on November 1st, 1996 in Mazamet, I now live in
+						Montauban. Although I studied History, I am among those
+						who believe that university studies do not necessarily
+						predetermine us for a specific profession but rather
+						provide us with a range of skills for active life. From
+						research in History to communication and new
+						technologies, as well as venturing into the business
+						world by creating my own company in 2019, not to mention
+						various experiences in sales, my career path may seem
+						eclectic. However, I believe that it is this diversity
+						that enriches my experience. Passionate, I commit fully
+						to my endeavors and enjoy learning. Therefore, I love to
+						read as well as write. Gramsci said, "I'm a pessimist
+						because of intelligence, but an optimist because of
+						will," and I must say that I greatly identify with the
+						pragmatism of this quote which represents my view of
+						things well. Rarely short of ideas, I easily take
+						initiatives. My energy is predominantly action-oriented.
+						I know how to be attentive and promote teamwork. Capable
+						of both moving forward and reevaluating myself based on
+						the feedback I receive, I am very receptive to new
+						challenges.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>
+						• Master 2 History Research - Montpellier • Financial
+						Markets - Yale (Online) •
+						Public-PrivatePartnerships(PPP): How to provide better
+						infrastructure for public services - World Bank Group •
+						Creating and Developping a Tech StartUp - HEC x
+						Polytechnique
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>
+						Public Policy • Analyst • Communication Crisis • Social
+						Media • New Technologies
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
